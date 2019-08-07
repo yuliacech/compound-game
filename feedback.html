@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Dilly's Abenteuer in Tübingen</title><meta charset="UTF-8" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <div id="feedback_container">
+            <div id="feedback_header">Bitte, sage uns deine Meinung!</div>
+
+            <div id="feedback_body">
+                
+                <textarea id="feedback_text"></textarea>
+                <div class="status"></div>
+                <input type="button" value="Abschicken" id="feedback_button" />
+            </div>
+        </div>
+        <!-- jQuery Library -->
+        <script type="text/javascript" src="lib/jquery-2.1.1.js"></script>
+        <!-- utils -->
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                charLimit();
+                feedback();
+            });
+        </script>
+    </body>
+</html>

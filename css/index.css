@@ -1,0 +1,297 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font: 17px 'Lucida Grande', Verdana, sans-serif;
+
+    /* Allow mouse dragging. */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    /* disable touch panning/zooming */
+    -ms-touch-action: none;
+    touch-action: none;
+    background-image: url(paper.jpg);
+    /* Allow canvas to hit the edges of the browser viewport. */
+    margin: 0;
+}
+
+#screen canvas {
+    font: 17px 'Lucida Grande', Verdana, sans-serif;
+    margin: auto;
+    // do not resize the canvas to fit the window 
+    //width: 800px;
+    //height: 500px;
+    display: block;
+
+    /* disable scaling interpolation */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: css colors ios7 styleoptimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+#dialog {
+    margin: auto;
+    display: none;
+    background-color: lavender;
+    background-image: url(paper.jpg);
+    overflow: auto;
+}
+
+#choose_box {
+    margin-top: 25px;
+    margin-left: 3%;
+    float:left;
+    width: 77%;
+    background-color:  white;
+}
+
+#answer_box {
+    background-color:  white;
+    margin-left: 82%;
+    margin-right: 25px;
+    position: fixed;
+    width: 18%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    margin-top: 25px;
+}
+
+#compound_label, #table_header,#feedback_header,#info_header{
+    padding-top: 5px;
+    text-align: center;
+    background-color: #f0f1f2;
+    border:1px solid #cdd3d7;
+    border-bottom: 0px;
+}
+
+#answer_title {
+    padding: 15px;
+    text-align: center;
+    background-color: #f0f1f2;
+    border:1px solid #cdd3d7;
+    border-bottom: 0px;
+    -moz-border-radius: 10px 10px 0 0 ;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0; /* future proofing */
+}
+
+#tags_area {
+    text-align: center;
+    border:1px solid #cdd3d7;
+    border-top: 0px;
+}
+
+#answer_tags {
+    -moz-border-radius: 0 0 10px 10px ;
+    -webkit-border-radius: 0 0 10px 10px ;
+    border-radius: 0 0 10px 10px ; /* future proofing */
+    text-align: center;
+    border:1px solid #cdd3d7;
+    border-top: 0px;
+}
+
+#sentences_area, #answer_sentence{
+    display: block;
+    border:1px solid #cdd3d7;
+}
+
+#answer_sentence {
+    text-align: center;
+}
+
+.sentence_card{
+    text-align: left;
+    border:1px solid #cdd3d7;
+    border-width: 1px 0 0 1px;
+    padding: 1em;
+}
+.sentence_card:last-child {
+    border-width: 1px 0 1px 1px;
+}
+
+.tag_card {
+    background: #6990d1;
+    border-color: #687ebb #5f74a6 #4e6198;
+    padding: 1em;
+    display: inline-block;
+    margin: 0.5%;
+    color: white;
+    border: 1px solid;
+    border-color: #8c8f9a #78828b #6e6e6e;
+    border-radius: 3px; 
+}
+
+.highlight {
+    background-color: #99abb9;
+    cursor: pointer;
+    color: white;
+}
+
+@font-face
+{
+    font-family: 'Gretoon';
+    src: url('Bromine.ttf');
+}
+
+#label {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 10%;
+    left : 20%;
+    width: 60%;
+    font-family: Gretoon, Verdana, sans-serif;
+    color: #003366;  
+    font-size: 1.5em;
+    line-height: 3;
+}
+#instructions {
+    text-align: center;
+    display: block;
+    font-family: Gretoon, Verdana, sans-serif;
+    color: #003366;  
+    font-size: 1em;
+    line-height: 3;
+}
+
+#sidebar{
+    width:210px;
+    height : 250px;
+    position:fixed;
+    top:30%;
+    left:-170px;
+    z-index:100;
+    background:#003366;
+    color:#fff;
+    overflow:hidden;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0; /* future proofing */
+}
+#sidebar ul{
+    padding:10px;
+    width:170px;
+    margin:10px;
+    list-style:none;
+}
+
+#sidebar li {
+    margin: 10px;
+}
+#sidebar li:last-child {
+    margin-top: 20px;
+}
+
+.fb-share-button
+{
+    transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    transform-origin: top left;
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+}
+input[type=text] {
+    font-size: 20px;
+    height: 40px;
+    padding:5px 15px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333; 
+}
+input[type=button] {
+    font-size: 20px;
+    height: 40px;
+    padding:5px 15px; 
+    background:#ccc; 
+    border:2px solid #ccc;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+
+}
+.link_container { 
+    padding: 0 0 0 5px;
+    width: 150px;
+    background: whitesmoke;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+}
+a {
+    color: #003366;
+    text-decoration:none;
+}
+
+#table_container, #feedback_container, #info_container {
+    margin: 25px 10% auto 10%;
+    background-color:  white;
+    font-family: Gretoon, Verdana, sans-serif;
+    color: #003366;  
+}
+
+#table_header,#feedback_header, #info_header{
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+table,#feedback_body, #info_body {
+    width: 100%;
+    font-size: 1.2em;
+    line-height: 1.5;
+    border:1px solid #cdd3d7;
+    border-collapse: collapse;
+    border-color:#cdd3d7;
+}
+table td {
+   border-color:#cdd3d7;
+}
+
+#feedback_text {
+    margin: 2% 2% 2% 2%;
+    width: 96%;
+    height: 200px;
+    font-size: 0.8em;
+}
+#feedback_button {
+    float: right;
+    margin: 0 2% 2% 0;
+}
+.status{
+    float: left;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 0.8em;
+    color: grey;
+    margin: 0 0 0 2%;
+}
+#feedback_body {
+    overflow: auto;
+}
+#info_text {
+    margin: 2%;
+    font-family: Verdana;
+    font-size: 0.8em;
+    color: black;
+    line-height: 2;
+}
+
